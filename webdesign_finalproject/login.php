@@ -4,9 +4,8 @@ include_once( "mysql_connect.php");
 session_start();
 //啟動 session
 
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -42,11 +41,11 @@ session_start();
                 echo "<p class='error'>{$_GET['msg']}</p>";
             }
         ?>
-        <label>帳號</label> <input type="text" width="80px" height="30px" placeholder="請填入您的帳號" name="id"></input> 
+        <label>帳號</label> <input type="text" width="80px" height="30px" placeholder="請填入您的帳號" name="username" autofocus></input> 
         <br><br>
-        <label>密碼</label> <input type="text" width="80px" height="30px" placeholder="請填入您的密碼" name="pw"></input> 
+        <label>密碼</label> <input type="password" width="80px" height="30px" placeholder="請填入您的密碼" name="pw"></input> 
         <br><br>
-        <button>登入</button>
+       <input type="submit" value="login"></input>
     </form>
     <?php endif;?>
 </body>

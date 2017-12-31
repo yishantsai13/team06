@@ -5,14 +5,14 @@
 	//假設的有效會員帳號
 	// $db_user = "a";
 	// $db_password = "a";
-    $id=$_POST['id'];
+    $username=$_POST['username'];
     $pw=$_POST['pw'];
-	$sql="select * from user where id='$id' and pw='$pw';";//搜尋資料庫資料
+	$sql="select * from user where username='$username' and pw='$pw';";//搜尋資料庫資料
 	
 	$result=mysqli_query($link,$sql);  
 
 	//使用 isset 判別有沒有此變數可以使用
-	if(isset($id) && isset($pw))
+	if(isset($username) && isset($pw))
 	{
 		//直接對傳過來的帳號密碼做比對
 
