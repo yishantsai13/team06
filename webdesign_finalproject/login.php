@@ -1,6 +1,5 @@
 <?php
 include_once( "mysql_connect.php");
-
 session_start();
 //啟動 session
 
@@ -26,12 +25,20 @@ session_start();
 </style>
 <body>
     <?php
-     
-        //使用 isset()方法，判別有沒有此變數可以使用，以及為已經登入
-        if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == TRUE):
+         
 
-        //使用php header 來轉址到後台
-        header('Location: backend.php');
+        //使用 isset()方法，判別有沒有此變數可以使用，以及為已經登入
+        if(isset($_SESSION['is_user']) && $_SESSION['is_user'] == TRUE):
+                
+               //使用php header 來轉址到後台
+                     header('Location: userend.php');
+
+        elseif(isset($_SESSION['is_admin ']) && $_SESSION['is_admin'] == TRUE):
+            header('Location: adminend.php');
+       
+
+
+
 
         else:
     ?>
@@ -47,6 +54,9 @@ session_start();
         <br><br>
        <input type="submit" value="login"></input>
     </form>
-    <?php endif;?>
+    
+    <?php endif;
+    
+    ?>
 </body>
 </html>
